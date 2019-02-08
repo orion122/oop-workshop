@@ -22,7 +22,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```bash
+exe/oop-workshop
+exe/oop-workshop 8.8.8.8
+```
 
 ## Development
 
@@ -32,4 +35,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/oop-workshop.
+Bug reports and pull requests are welcome on GitHub at https://github.com/orion122/oop-workshop.
