@@ -1,3 +1,6 @@
 #!/usr/bin/env ruby
 
-require "oop/workshop"
+require 'bundler/setup'
+require 'oop/workshop'
+
+puts Oop::Workshop::GeoData.new(ARGV[0]).get_data
