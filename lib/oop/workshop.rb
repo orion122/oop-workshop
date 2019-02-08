@@ -5,18 +5,14 @@ module Oop::Workshop
   class GeoData
     URL = 'http://ip-api.com/json'
 
-    attr_reader :ip
+    attr_reader :url
 
-    def initialize(ip = nil)
-      @ip = ip
-    end
-
-    def get_url
-      @ip.nil? ? URL : "#{URL}/#{@ip}"
+    def initialize(ip = '')
+      @url = "#{URL}/#{ip}"
     end
 
     def get_data
-      uri = URI.parse(get_url)
+      uri = URI.parse(@url)
       request = Net::HTTP::Get.new(uri)
 
       response = Net::HTTP.start(uri.host, uri.port) do |http|
