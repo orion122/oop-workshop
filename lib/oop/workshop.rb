@@ -1,5 +1,5 @@
 require 'oop/workshop/version'
-require 'net/http'
+require 'open-uri'
 
 module Oop::Workshop
   class GeoData
@@ -12,14 +12,7 @@ module Oop::Workshop
     end
 
     def get_data
-      uri = URI.parse(@url)
-      request = Net::HTTP::Get.new(uri)
-
-      response = Net::HTTP.start(uri.host, uri.port) do |http|
-        http.request(request)
-      end
-
-      response.body
+      open(@url).read
     end
   end
 end
