@@ -1,5 +1,6 @@
 RSpec.describe Oop::Workshop do
   let(:ip) { '8.8.8.8' }
+  let(:city) { 'Mountain View' }
   let(:geo_data_class) { Oop::Workshop::GeoData }
   let(:geo_data_pass_ip) { geo_data_class.new(ip) }
   let(:geo_data_dont_pass_ip) { geo_data_class.new }
@@ -14,7 +15,8 @@ RSpec.describe Oop::Workshop do
 
     context 'pass ip' do
       subject { geo_data_pass_ip.get_data }
-      it { is_expected.to include("\"query\":\"#{ip}\"") }
+      it { is_expected.to include(ip) }
+      it { is_expected.to include(city) }
     end
   end
 end
